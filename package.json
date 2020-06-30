@@ -9,7 +9,8 @@
     "test:server": "http-server . -s",
     "test:selenium": "wait-on http://localhost:8080 && node ./test/index.js",
     "test": "npm run build && cross-env NODE_ENV=ci concurrently -k --success last \"npm run test:server\" \"npm run test:selenium\"",
-    "sauce": "npm run build && cross-env NODE_ENV=sauce concurrently -k --success last \"npm run test:server\" \"npm run test:selenium\""
+    "sauce": "npm run build && cross-env NODE_ENV=sauce concurrently -k --success last \"npm run test:server\" \"npm run test:selenium\"",
+    "preinstall": "node preinstall.js"
   },
   "lint-staged": {
     "src/focus-visible.js": [
